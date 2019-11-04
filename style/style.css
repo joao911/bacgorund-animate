@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+h2{
+    position: relative;
+    font-size: 14em;
+    display: block;
+    z-index: 1;
+    -webkit-text-stroke: 2px #fff;
+    text-transform: uppercase;
+    transition: .5s;
+    color:transparent
+
+}
+h3{
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+    display: block;
+    color:#fff;
+    transition:.5s;
+    overflow: hidden;
+}
+h3 span{
+    position: relative;
+    display: inline-block;
+    padding: 5px 0 5px 5px;
+    letter-spacing: 1px;
+    animation: animate 4s linear infinite;
+}
+h3 span:before{
+    content: attr(data-text);
+    position: absolute;
+    top:0;
+    left:-100%;
+    padding: 5px 0 5px 5px;
+}
+@keyframes animate{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.bg{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    background: linear-gradient(45deg,#F17C58,#E94584,#24AADB,#27DBB1,#FFDC18,#FF3706);
+    animation: color-rotate 10s linear infinite;
+    white-space: nowrap;
+}
+@keyframes color-rotate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.bg p{
+    position: relative;
+    text-transform: uppercase;
+    color:rgba(255,255, 255,.4);
+    z-index: 1;
+    display: block;
+    transition:.5s;
+    overflow: hidden;
+    border-top:1px solid rgba(255,255, 255,.4);
+}
+.bg p span{
+    position: relative;
+    display: inline-block;
+    padding: 5px 0 5px 5px;
+    letter-spacing: 1px;
+    animation: animate 20s linear infinite;
+}
+.bg p:nth-child(even) span{
+    animation: animate2 20s linear infinite;   
+}
+.bg p span:before{
+    content: attr(data-text);
+    position: absolute;
+    top:0;
+    left:-100%;
+    padding: 5px 0 5px 5px;
+}
+@keyframes animate2{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
